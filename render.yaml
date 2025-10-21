@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: android-builder
+    env: docker
+    plan: free
+    region: singapore
+    envVars:
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: GIT_REPO
+        value: hxh07y/Shutterbites
+      - key: CODE_SERVER_PASSWORD
+        sync: false
+    disk:
+      name: workspace-data
+      mountPath: /workspace
+      sizeGB: 10
+    autoDeploy: false
