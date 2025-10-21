@@ -58,4 +58,4 @@ echo "-----------------------------------"
 
 # --- Launch code-server ---
 echo "🚀 Starting code-server..."
-exec code-server --auth password --port 8080 /workspace/app
+exec code-server --bind-addr 0.0.0.0:${PORT:-10000} --auth password /workspace/app
